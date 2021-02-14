@@ -79,6 +79,9 @@ class FindingAdmin(ImportExportModelAdmin):
                     "host_detection_techniques",
                     "network_detection_techniques",
                     "references",
+                    "cvss_score",
+                    "cvss_string",
+                    "cvss_version"
                 )
             },
         ),
