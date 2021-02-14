@@ -205,6 +205,8 @@ class FindingAssignment(LoginRequiredMixin, SingleObjectMixin, View):
                 severity=self.object.severity,
                 finding_type=self.object.finding_type,
                 finding_guidance=self.object.finding_guidance,
+                cvss_string=self.cvss_string,
+                cvss_version=self.cvss_version,
                 report=report,
                 assigned_to=self.request.user,
                 position=self.get_position(report.id),

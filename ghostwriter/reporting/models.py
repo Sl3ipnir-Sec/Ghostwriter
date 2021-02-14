@@ -163,6 +163,24 @@ class Finding(models.Model):
         blank=True,
         help_text="Provide notes for your team that describes how the finding is intended to be used or edited during editing",
     )
+    cvss_string = models.TextField(
+        "CVSS String",
+        null=True,
+        blank=True,
+        help_text="Enter your CVSS2/CVSS3 string"
+    )
+    cvss_score = models.TextField(
+        "CVSS Score",
+        null=True,
+        blank=True,
+        help_text="CVSS Score"
+    )
+    cvss_version = models.IntegerField(
+        "CVSS Version",
+        null=True,
+        blank=True,
+        help_text="CVSS Version. Limited to 2 and 3 at present (no 3.1)"
+    )
     # Foreign Keys
     severity = models.ForeignKey(
         "Severity",
@@ -457,6 +475,24 @@ class ReportFindingLink(models.Model):
         "Completed",
         default=False,
         help_text="Mark the finding as ready for a QA review",
+    )
+    cvss_string = models.TextField(
+        "CVSS String",
+        null=True,
+        blank=True,
+        help_text="Enter your CVSS2/CVSS3 string"
+    )
+    cvss_score = models.TextField(
+        "CVSS Score",
+        null=True,
+        blank=True,
+        help_text="CVSS Score"
+    )
+    cvss_version = models.IntegerField(
+        "CVSS Version",
+        null=True,
+        blank=True,
+        help_text="CVSS Version. Limited to 2 and 3 at present (no 3.1)"
     )
     # Foreign Keys
     severity = models.ForeignKey(

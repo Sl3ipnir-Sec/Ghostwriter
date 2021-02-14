@@ -290,6 +290,9 @@ class Reportwriter:
                 "network_detection_techniques"
             ] = finding.network_detection_techniques
             report_dict["findings"][finding.id]["references"] = finding.references
+            report_dict["findings"][finding.id]["cvss_string"] = finding.cvss_string
+            report_dict["findings"][finding.id]["cvss_score"] = finding.cvss_score
+            report_dict["findings"][finding.id]["cvss_version"] = finding.cvss_version
             # Get any evidence
             report_dict["findings"][finding.id]["evidence"] = {}
             for evidence_file in finding.evidence_set.all():
