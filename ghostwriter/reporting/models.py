@@ -165,12 +165,14 @@ class Finding(models.Model):
     )
     cvss_string = models.CharField(
         "CVSS String",
+        max_length=255,
         null=True,
         blank=True,
         help_text="Enter your CVSS2/CVSS3 string"
     )
     cvss_score = models.CharField(
         "CVSS Score",
+        max_length=4,
         null=True,
         blank=True,
         help_text="CVSS Score"
@@ -478,12 +480,14 @@ class ReportFindingLink(models.Model):
     )
     cvss_string = models.CharField(
         "CVSS String",
+        max_length=255,
         null=True,
         blank=True,
         help_text="Enter your CVSS2/CVSS3 string"
     )
     cvss_score = models.CharField(
         "CVSS Score",
+        max_length=4,
         null=True,
         blank=True,
         help_text="CVSS Score"
