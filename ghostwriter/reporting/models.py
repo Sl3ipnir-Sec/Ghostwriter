@@ -163,13 +163,13 @@ class Finding(models.Model):
         blank=True,
         help_text="Provide notes for your team that describes how the finding is intended to be used or edited during editing",
     )
-    cvss_string = models.TextField(
+    cvss_string = models.CharField(
         "CVSS String",
         null=True,
         blank=True,
         help_text="Enter your CVSS2/CVSS3 string"
     )
-    cvss_score = models.TextField(
+    cvss_score = models.CharField(
         "CVSS Score",
         null=True,
         blank=True,
@@ -476,13 +476,13 @@ class ReportFindingLink(models.Model):
         default=False,
         help_text="Mark the finding as ready for a QA review",
     )
-    cvss_string = models.TextField(
+    cvss_string = models.CharField(
         "CVSS String",
         null=True,
         blank=True,
         help_text="Enter your CVSS2/CVSS3 string"
     )
-    cvss_score = models.TextField(
+    cvss_score = models.CharField(
         "CVSS Score",
         null=True,
         blank=True,
