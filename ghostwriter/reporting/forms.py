@@ -48,6 +48,9 @@ class FindingForm(forms.ModelForm):
         self.fields["title"].widget.attrs["autocomplete"] = "off"
         self.fields["description"].widget.attrs["placeholder"] = "What is this ..."
         self.fields["impact"].widget.attrs["placeholder"] = "What is the impact ..."
+        self.fields["cvss_score"].widget.attrs["placeholder"] = "CVSS score, e.g 5.4"
+        self.fields["cvss_version"].widget.attrs["placeholder"] = "CVSS version, e.g. 2 or 3"
+        self.fields["cvss_string"].widget.attrs["placeholder"] = "CVSS string"
         self.fields["mitigation"].widget.attrs[
             "placeholder"
         ] = "What needs to be done ..."
@@ -88,6 +91,9 @@ class FindingForm(forms.ModelForm):
                     "Description",
                     "description",
                     "impact",
+                    "cvss_score",
+                    "cvss_version",
+                    "cvss_string",
                     link_css_class="tab-icon pencil-icon",
                     css_id="description-tab",
                 ),
@@ -201,6 +207,9 @@ class ReportFindingLinkUpdateForm(forms.ModelForm):
         self.fields["title"].widget.attrs["autocomplete"] = "off"
         self.fields["description"].widget.attrs["placeholder"] = "What is this ..."
         self.fields["impact"].widget.attrs["placeholder"] = "What is the impact ..."
+        self.fields["cvss_score"].widget.attrs["placeholder"] = "CVSS score, e.g 5.4"
+        self.fields["cvss_version"].widget.attrs["placeholder"] = "CVSS version, e.g. 2 or 3"
+        self.fields["cvss_string"].widget.attrs["placeholder"] = "CVSS string"
         self.fields["mitigation"].widget.attrs[
             "placeholder"
         ] = "What needs to be done ..."
@@ -258,6 +267,9 @@ class ReportFindingLinkUpdateForm(forms.ModelForm):
                 <hr />
                 """
             ),
+            Field("cvss_score"),
+            Field("cvss_version"),
+            Field("cvss_string"),
             Field("mitigation", css_class="enable-evidence-upload"),
             Field("replication_steps", css_class="enable-evidence-upload"),
             Field("host_detection_techniques", css_class="enable-evidence-upload"),

@@ -82,6 +82,7 @@
                 <tr>
                     <th>Order</th>
                     <th>Finding</th>
+                    <th>CVSS Score</th>
                     <th>
                         Evidence
                         <div class="dropdown">
@@ -123,6 +124,7 @@
                                 <tr id="finding_{{ finding.id }}" data-id="{{ finding.id }}" class="severity_row">
                                     <td class="holdme"></td>
                                     <td class="clickable"><a id="delete-target-content-finding-{{ finding.id }}" href="{% url 'reporting:local_edit' finding.id %}">{{ finding.title }}</a></td>
+                                    <td>{{ finding.cvss_score }}</td>
                                     {% if finding.evidence_set.all %}
                                         <td>
                                             {% for evidence_file in finding.evidence_set.all %}
