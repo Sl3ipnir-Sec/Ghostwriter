@@ -261,15 +261,15 @@ class ReportFindingLinkUpdateForm(forms.ModelForm):
             ),
             Field("description", css_class="enable-evidence-upload"),
             Field("impact", css_class="enable-evidence-upload"),
+            Field("cvss_score"),
+            Field("cvss_version"),
+            Field("cvss_string"),
             HTML(
                 """
                 <h6 class="icon shield-icon">Defense</h6>
                 <hr />
                 """
             ),
-            Field("cvss_score"),
-            Field("cvss_version"),
-            Field("cvss_string"),
             Field("mitigation", css_class="enable-evidence-upload"),
             Field("replication_steps", css_class="enable-evidence-upload"),
             Field("host_detection_techniques", css_class="enable-evidence-upload"),
