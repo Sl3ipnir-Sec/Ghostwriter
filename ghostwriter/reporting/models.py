@@ -181,7 +181,7 @@ class Finding(models.Model):
         "CVSS Version",
         null=True,
         blank=True,
-        help_text="CVSS Version. Limited to 2 and 3 at present (no 3.1)"
+        help_text="CVSS Version (2 or 3)"
     )
     # Foreign Keys
     severity = models.ForeignKey(
@@ -496,7 +496,7 @@ class ReportFindingLink(models.Model):
         "CVSS Version",
         null=True,
         blank=True,
-        help_text="CVSS Version. Limited to 2 and 3 at present (no 3.1)"
+        help_text="CVSS Version (2 or 3)"
     )
     # Foreign Keys
     severity = models.ForeignKey(
