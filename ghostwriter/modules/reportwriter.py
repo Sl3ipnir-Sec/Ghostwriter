@@ -448,6 +448,8 @@ class Reportwriter:
             ] = operator.start_date
             report_dict["team"][operator.operator.id]["end_date"] = operator.end_date
             report_dict["team"][operator.operator.id]["note"] = operator.note
+            report_dict["team"][operator.operator.id]["job_title"] = operator.operator.job_title
+            report_dict["team"][operator.operator.id]["qualifications"] = operator.operator.qualifications
         return json.dumps(report_dict, indent=2, cls=DjangoJSONEncoder)
 
     def make_figure(self, par, ref=None):

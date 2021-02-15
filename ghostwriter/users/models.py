@@ -13,6 +13,8 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns around the globe
     name = CharField(_("Name of User"), blank=True, max_length=255)
+    job_title = CharField(_("Job Title"), blank=True, max_length=255)
+    qualifications = CharField(_("Qualifications"), blank=True, max_length=255)
     first_name = None
     last_name = None
 
